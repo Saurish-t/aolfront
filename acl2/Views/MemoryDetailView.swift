@@ -8,7 +8,6 @@ struct MemoryDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                // Header
                 VStack(alignment: .leading, spacing: 8) {
                     Text(memory.title)
                         .font(.largeTitle)
@@ -21,7 +20,6 @@ struct MemoryDetailView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)
                 
-                // Photos
                 if !memory.media.images_data.isEmpty {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
@@ -38,7 +36,6 @@ struct MemoryDetailView: View {
                         .padding(.horizontal)
                     }
                 } else {
-                    // Placeholder for memories without photos
                     ZStack {
                         Rectangle()
                             .fill(Color.gray.opacity(0.2))
@@ -56,7 +53,6 @@ struct MemoryDetailView: View {
                     .padding(.horizontal)
                 }
                 
-                // Description
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Description")
                         .font(.headline)
@@ -67,7 +63,6 @@ struct MemoryDetailView: View {
                 }
                 .padding(.horizontal)
                 
-                // Location
                 if let location = memory.location {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Location")
