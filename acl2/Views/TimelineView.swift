@@ -45,7 +45,6 @@ struct TimelineView: View {
         NavigationView {
             VStack(spacing: 0) {
                 
-                // Custom Top Bar with black centered "Timeline"
                 Text("Timeline")
                     .font(.system(size: 28, weight: .bold, design: .rounded))
                     .foregroundColor(.black)
@@ -123,7 +122,6 @@ struct TimelineView: View {
                     .background(Color.white)
                 }
             }
-            // Removed default navigationTitle & accentColor here
             .onAppear {
                 fetchTimeline()
             }
@@ -263,6 +261,6 @@ struct TimelineView: View {
 
 #Preview {
     TimelineView()
-        .environmentObject(MemoryStore()) // your environment object
+        .environmentObject(MemoryStore())
 }
 
