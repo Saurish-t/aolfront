@@ -7,7 +7,7 @@ struct ContentView: View {
     init() {
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor.white  // Ensure it's solid white
+        appearance.backgroundColor = UIColor.white 
         UITabBar.appearance().standardAppearance = appearance
         UITabBar.appearance().scrollEdgeAppearance = appearance
         UITabBar.appearance().unselectedItemTintColor = UIColor.systemGray3
@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Color.white
-                .ignoresSafeArea() // Covers the bottom black space
+                .ignoresSafeArea()
 
             TabView(selection: $selectedTab) {
                 HomeView()
