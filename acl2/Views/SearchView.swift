@@ -12,7 +12,6 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             VStack {
-                // Search Bar
                 HStack {
                     ZStack(alignment: .leading) {
                         if searchText.isEmpty {
@@ -32,7 +31,7 @@ struct SearchView: View {
                             .onSubmit {
                                 performSearch()
                             }
-                            .foregroundColor(.black)  // Ensure input text is black
+                            .foregroundColor(.black)  
                     }
 
                     Button(action: performSearch) {
@@ -45,7 +44,6 @@ struct SearchView: View {
                 }
                 .padding()
 
-                // Results & States
                 if isLoading {
                     Spacer()
                     ProgressView("Searching...")
@@ -87,7 +85,6 @@ struct SearchView: View {
         }
     }
 
-    // MARK: - Perform Search
     func performSearch() {
         guard !searchText.isEmpty else { return }
         isLoading = true
@@ -135,7 +132,6 @@ struct SearchView: View {
     }
 }
 
-// MARK: - Preview
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
