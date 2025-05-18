@@ -1,13 +1,10 @@
 import SwiftUI
 
-// Central theme management for consistent colors across the app
 struct AppTheme {
-    // Primary colors
     static let primary = Color(hex: "6C5CE7")       // Rich purple
     static let secondary = Color(hex: "00CEC9")     // Teal
     static let accent = Color(hex: "FD79A8")        // Pink
     
-    // Gradients
     static let primaryGradient = LinearGradient(
         gradient: Gradient(colors: [primary, primary.opacity(0.8)]),
         startPoint: .topLeading,
@@ -26,12 +23,10 @@ struct AppTheme {
         endPoint: .bottom
     )
     
-    // Card styles
     static func cardBackground(_ colorScheme: ColorScheme) -> Color {
         colorScheme == .dark ? Color(hex: "2D3436").opacity(0.7) : Color.white
     }
     
-    // Button styles
     static let primaryButtonStyle = ButtonStyle(
         background: primary,
         foreground: .white,
@@ -50,7 +45,6 @@ struct AppTheme {
         pressedBackground: accent.opacity(0.8)
     )
     
-    // Text colors
     static func textPrimary(_ colorScheme: ColorScheme) -> Color {
         colorScheme == .dark ? Color.white : Color(hex: "2D3436")
     }
@@ -59,7 +53,6 @@ struct AppTheme {
         colorScheme == .dark ? Color.white.opacity(0.7) : Color(hex: "636E72")
     }
     
-    // Helper struct for button styling
     struct ButtonStyle {
         let background: Color
         let foreground: Color
@@ -67,7 +60,6 @@ struct AppTheme {
     }
 }
 
-// Extension to create colors from hex values
 extension Color {
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
@@ -94,7 +86,6 @@ extension Color {
     }
 }
 
-// Custom button styles
 struct PrimaryButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -168,7 +159,6 @@ struct OutlineButtonStyle: ButtonStyle {
     }
 }
 
-// Custom card style
 struct MemoryCardStyle: ViewModifier {
     @Environment(\.colorScheme) var colorScheme
     
