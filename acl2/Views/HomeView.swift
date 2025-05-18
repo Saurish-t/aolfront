@@ -25,16 +25,13 @@ struct HomeView: View {
                             EmptyView()
                         }
 
-                        // Header
                         headerView
                             .padding(.horizontal)
                             .padding(.top, 15)
 
-                        // Quick Actions
                         quickActions
                             .padding(.horizontal)
 
-                        // Featured Memory Section
                         featuredMemorySection
                             .padding(.top, 10)
                     }
@@ -57,8 +54,6 @@ struct HomeView: View {
             }
         }
     }
-
-    // MARK: - Header View
 
     private var headerView: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -89,7 +84,6 @@ struct HomeView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 
-    // MARK: - Quick Actions
 
     private var quickActions: some View {
         HStack(spacing: 20) {
@@ -119,7 +113,6 @@ struct HomeView: View {
         }
     }
 
-    // MARK: - Featured Memory Section
 
     private var featuredMemorySection: some View {
         VStack(alignment: .center, spacing: 12) {
@@ -151,7 +144,6 @@ struct HomeView: View {
         }
     }
 
-    // MARK: - Networking
 
     func fetchRandomMemory() {
         guard let url = URL(string: "http://192.168.68.98:5004/memory/random") else { return }
@@ -188,7 +180,6 @@ struct HomeView: View {
     }
 }
 
-// MARK: - QuickActionButton
 
 struct QuickActionButton: View {
     private let modernPurple = Color(red: 103/255, green: 58/255, blue: 183/255)
@@ -224,7 +215,6 @@ struct QuickActionButton: View {
     }
 }
 
-// MARK: - Preview
 
 #Preview {
     HomeView()
