@@ -2,7 +2,6 @@ import SwiftUI
 import UIKit
 import PhotosUI
 
-// Unified image picker for single image selection
 struct ImagePicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
     @Environment(\.presentationMode) var presentationMode
@@ -47,7 +46,6 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 }
 
-// Multi-image picker for selecting multiple photos
 struct MultiImagePicker: UIViewControllerRepresentable {
     @Binding var selectedImages: [UIImage]
     @Environment(\.presentationMode) var presentationMode
