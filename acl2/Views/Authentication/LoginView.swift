@@ -19,7 +19,6 @@ struct LoginView: View {
                 
                 ScrollView {
                     VStack(spacing: 25) {
-                        // Header
                         VStack(spacing: 15) {
                             ZStack {
                                 Circle()
@@ -42,9 +41,7 @@ struct LoginView: View {
                         }
                         .padding(.top, 30)
                         
-                        // Form
                         VStack(spacing: 20) {
-                            // Email field
                             VStack(alignment: .leading, spacing: 8) {
                                 Text("Email")
                                     .font(.headline)
@@ -69,7 +66,6 @@ struct LoginView: View {
                                 )
                             }
                             
-                            // Password field
                             VStack(alignment: .leading, spacing: 8) {
                                 Text("Password")
                                     .font(.headline)
@@ -91,12 +87,10 @@ struct LoginView: View {
                                 )
                             }
                             
-                            // Forgot password
                             HStack {
                                 Spacer()
                                 
                                 Button(action: {
-                                    // Forgot password action
                                 }) {
                                     Text("Forgot Password?")
                                         .font(.subheadline)
@@ -107,7 +101,6 @@ struct LoginView: View {
                         }
                         .padding(.horizontal)
                         
-                        // Error message
                         if showError {
                             Text(errorMessage)
                                 .font(.subheadline)
@@ -115,7 +108,6 @@ struct LoginView: View {
                                 .padding(.horizontal)
                         }
                         
-                        // Login button
                         Button(action: {
                             login()
                         }) {
@@ -132,7 +124,6 @@ struct LoginView: View {
                         .padding(.horizontal)
                         .disabled(isLoading)
                         
-                        // Divider
                         HStack {
                             VStack { Divider() }
                             Text("OR")
@@ -143,7 +134,6 @@ struct LoginView: View {
                         }
                         .padding(.horizontal)
                         
-                        // Social login buttons
                         HStack(spacing: 15) {
                             SocialLoginButton(icon: "apple.logo", color: .black)
                             SocialLoginButton(icon: "g.circle.fill", color: Color(hex: "DB4437"))
@@ -151,7 +141,6 @@ struct LoginView: View {
                         }
                         .padding(.horizontal)
                         
-                        // Sign up prompt
                         HStack {
                             Text("Don't have an account?")
                                 .font(.subheadline)
@@ -159,7 +148,6 @@ struct LoginView: View {
                             
                             Button(action: {
                                 presentationMode.wrappedValue.dismiss()
-                                // Need to add a way to show sign up view
                             }) {
                                 Text("Sign Up")
                                     .font(.subheadline)
@@ -204,7 +192,6 @@ struct SocialLoginButton: View {
     
     var body: some View {
         Button(action: {
-            // Social login action
         }) {
             Image(systemName: icon)
                 .font(.system(size: 24))
