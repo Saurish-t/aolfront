@@ -8,12 +8,10 @@ struct ARMemoryView: UIViewRepresentable {
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
         
-        // Enable plane detection
         let config = ARWorldTrackingConfiguration()
         config.planeDetection = [.horizontal]
         arView.session.run(config)
         
-        // Add tap gesture
         let tapGesture = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleTap(_:)))
         arView.addGestureRecognizer(tapGesture)
         
@@ -40,12 +38,9 @@ struct ARMemoryView: UIViewRepresentable {
                 return
             }
 
-            // Anchor where user tapped
             let anchor = AnchorEntity(world: result.worldTransform)
             
-            // Try loading model from app bundle
             do {
-                // Replace with your filename if different
                 let model = try ModelEntity.loadModel(named: "boxers.usdz")
                 model.generateCollisionShapes(recursive: true)
                 anchor.addChild(model)
